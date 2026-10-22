@@ -10,5 +10,17 @@
       "전체 코드 7개",
       "예상 문제 38개"
     ]
+  },
+  {
+    "id": "computer-vision",
+    "title": "컴퓨터비전",
+    "subtitle": "1–7장 · 이미지에서 Foundation Model까지",
+    "description": "개념의 차이, 모델 처리 순서, 계산 풀이와 지표의 변화를 이해하세요.",
+    "href": "/subjects/computer-vision/",
+    "tags": [
+      "개념 정리 7개 장",
+      "계산 풀이 14개",
+      "예상 문제 32개"
+    ]
   }
 ]
