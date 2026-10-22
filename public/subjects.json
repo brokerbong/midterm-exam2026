@@ -22,5 +22,17 @@
       "계산 풀이 14개",
       "예상 문제 32개"
     ]
+  },
+  {
+    "id": "natural-language-processing",
+    "title": "자연어처리",
+    "subtitle": "통계적 NLP부터 Transformer·LLM·미세조정까지",
+    "description": "설정값과 평가 지표를 구분하고, 값이 커질 때의 변화와 유불리를 설명하세요.",
+    "href": "/subjects/natural-language-processing/",
+    "tags": [
+      "개념 정리 7개 단원",
+      "설정값·평가 지표",
+      "예상 문제 42개"
+    ]
   }
 ]

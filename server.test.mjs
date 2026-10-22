@@ -8,9 +8,17 @@ test('home and every catalog subject are served with subject-specific content',a
   const home=await fetch(base);assert.equal(home.status,200);assert.match(await home.text(),/과목 목록/);
   const catalog=await (await fetch(base+'/subjects.json')).json();assert.equal(catalog[0].id,'unity');
   assert.ok(catalog.some(s=>s.id==='computer-vision'));
+  assert.ok(catalog.some(s=>s.id==='natural-language-processing'));
   for(const subject of catalog){const response=await fetch(base+subject.href);assert.equal(response.status,200);const html=await response.text();
     if(subject.id==='unity'){assert.match(html,/using UnityEngine.InputSystem;/);assert.doesNotMatch(html,/Input Manager|GetKeyDown|오류·혼동 바로잡기/);}
     if(subject.id==='computer-vision'){assert.match(html,/197개/);assert.match(html,/Precision/);assert.match(html,/MAE/);assert.match(html,/id="patch-output"/);}
+    if(subject.id==='natural-language-processing'){assert.match(html,/바꾸는 설정값/);assert.match(html,/평가 지표/);assert.match(html,/42문항/);assert.match(html,/id="sampling-output"/);}
+  }
+});
+test('NLP browser modules and stylesheet are served with the correct MIME types',async()=>{
+  for(const [name,type] of [['study.js','text/javascript'],['math.js','text/javascript'],['study.css','text/css']]){
+    const response=await fetch(base+'/subjects/natural-language-processing/'+name);
+    assert.equal(response.status,200);assert.ok(response.headers.get('content-type').startsWith(type));
   }
 });
 test('only public files and safe methods are served',async()=>{
