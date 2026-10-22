@@ -1,0 +1,9 @@
+{
+  "name": "midterm-exam2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "여러 과목을 모아 보는 모바일 시험 대비 노트",
+  "type": "module",
+  "engines": { "node": "24.x" },
+  "scripts": { "start": "node server.mjs", "test": "node --test" }
+}
