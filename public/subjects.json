@@ -34,5 +34,17 @@
       "설정값·평가 지표",
       "예상 문제 42개"
     ]
+  },
+  {
+    "id": "open-source-software",
+    "title": "오픈소스소프트웨어",
+    "subtitle": "사진 예상 문제 기반 · Linux 명령어 응용",
+    "description": "명령어·옵션·경로에 따른 실행 결과를 비교하고, 150문항으로 반복 연습하세요.",
+    "href": "/subjects/open-source-software/",
+    "tags": [
+      "핵심 정리 6단원",
+      "명령 작성·결과 예측",
+      "예상 문제 150개"
+    ]
   }
 ]

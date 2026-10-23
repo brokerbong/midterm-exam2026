@@ -9,10 +9,12 @@ test('home and every catalog subject are served with subject-specific content',a
   const catalog=await (await fetch(base+'/subjects.json')).json();assert.equal(catalog[0].id,'unity');
   assert.ok(catalog.some(s=>s.id==='computer-vision'));
   assert.ok(catalog.some(s=>s.id==='natural-language-processing'));
+  assert.ok(catalog.some(s=>s.id==='open-source-software'));
   for(const subject of catalog){const response=await fetch(base+subject.href);assert.equal(response.status,200);const html=await response.text();
     if(subject.id==='unity'){assert.match(html,/using UnityEngine.InputSystem;/);assert.doesNotMatch(html,/Input Manager|GetKeyDown|오류·혼동 바로잡기/);}
     if(subject.id==='computer-vision'){assert.match(html,/197개/);assert.match(html,/Precision/);assert.match(html,/MAE/);assert.match(html,/id="patch-output"/);}
     if(subject.id==='natural-language-processing'){assert.match(html,/바꾸는 설정값/);assert.match(html,/평가 지표/);assert.match(html,/42문항/);assert.match(html,/id="sampling-output"/);}
+    if(subject.id==='open-source-software'){assert.match(html,/150문항/);assert.match(html,/id="q-150"/);assert.match(html,/명령을 읽고/);}
   }
 });
 test('NLP browser modules and stylesheet are served with the correct MIME types',async()=>{
